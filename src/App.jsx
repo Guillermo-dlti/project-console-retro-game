@@ -66,12 +66,13 @@ function App() {
     computerSelection();
   }
 
-  console.log(myPokeSelection.length)
+  console.log("my",myPokeSelection.length, myPokeSelection)
+  console.log("pc",pcPokeSelection.length, pcPokeSelection)
   return (
     <div className="flex items-center justify-center min-h-screen">
       <LeftControl handleDirection={handleDirection} />
       {myPokeSelection.length && pcPokeSelection.length ? (
-        <GameScreen />
+        <GameScreen myPokeSelection={myPokeSelection} pcPokeSelection={pcPokeSelection}/>
       ) : (
         <Screen pokemones={pokemones} position={position} />
       )}

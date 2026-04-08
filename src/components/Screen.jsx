@@ -1,6 +1,6 @@
 
 const Screen = ({ pokemones, position }) => {
-    console.log(position);
+    // console.log(position);
     return (
         <>
             <div className="w-[440px] h-[250px] overflow-y-auto border-y-4 border-solid">
