@@ -1,15 +1,24 @@
 
-
-
-export default function Screen({ pokemones }) {
+const Screen = ({ pokemones, position }) => {
+    console.log(position);
     return (
-        <div>
-            <div className="w-[450px] h-[180px] border-t-4 border-b-4 border-solid">
-                {pokemones?.map((pokemon) => (
-                    <img src={pokemon?.sprites?.front_default} className="w-40 h-40" />
-                ))}
+        <>
+            <div className="w-[440px] h-[250px] overflow-y-auto border-y-4 border-solid">
+                <div className="flex flex-wrap justify-center">
+                    {pokemones?.map((pokemon, index) => (
+                        <div key={index} className="flex flex-col border-2" style={{color: position === pokemon.id ? "red" : "white"}} >
+                            <img
+                                src={pokemon?.sprites?.front_default}
+                                alt={pokemon.name}
+                                className="w-25 h-25"
+                            />
+                            <p>{pokemon.name}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
+        </>
+    );
+};
 
-        </div>
-    )
-}
+export default Screen;
