@@ -16,6 +16,7 @@ function App() {
   const [position, setPosition] = useState(1);
   const [myPokeSelection, setMyPokeSelection] = useState([]);
   const [pcPokeSelection, setPcPokeSelection] = useState([]);
+  const [ba, setBa] = useState(true);
 
   
   const [pokemonActual, setPokemonActual] = useState([]);
@@ -83,6 +84,7 @@ function App() {
     const selectPokemon = pokemones.filter((p) => p.id === position);
     setMyPokeSelection(selectPokemon);
     computerSelection();
+    setBa(false);
   };
 
   return (
@@ -99,7 +101,7 @@ function App() {
 
       
       <div className="mt-8 w-full max-w-[640px]">
-        <PokemonDetails actual={pokemonActual} />
+        <PokemonDetails actual={pokemonActual} ba={ba} />
       </div>
     </div>
   );
