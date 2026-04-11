@@ -21,14 +21,12 @@ const PokemonDetails = ({ actual = [], ba }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Visor de Sprites: Estilo "Pantalla de Laboratorio" */}
                     <div className="flex items-center justify-around bg-zinc-900 rounded-2xl p-2 border-4 border-zinc-200 shadow-inner">
                         <img src={imgFront} alt="frontal" className="w-24 h-24 pixelated" />
                         <div className="h-12 w-[2px] bg-zinc-700"></div>
                         <img src={imgBack} alt="trasera" className="w-24 h-24 pixelated" />
                     </div>
 
-                    {/* Panel de Habilidades */}
                     <div className="space-y-3">
                         <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-[3px]">
                             Data_Archive / Moves
